@@ -9,7 +9,11 @@ ACCOUNT_SID = '' 	# Fill in
 AUTH_TOKEN = '' 	# Fill in
 TWILIO_NUMBER = '' 	# Fill in
 CELL_NUMBER = '' 	# Fill in
-client = Client(ACCOUNT_SID, AUTH_TOKEN)
+''' Login Info '''
+USERNAME = '' 		# Fill in
+PASSWORD = '' 		# Fill in
+
+__client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 def check():
 	"""
@@ -17,7 +21,7 @@ def check():
 	:return:
 	"""
 	print("Checking for texts")
-	messages = client.messages.list()
+	messages = __client.messages.list()
 	for msg in messages:
 		msg_low = msg.body.lower()
 		if msg.from_ == CELL_NUMBER and ("homework" in msg_low or "hw" in msg_low):
@@ -42,7 +46,7 @@ def send_text(text, number):
 	:return:
 	"""
 	print("Sending text")
-	client.messages.create(body=text,from_=TWILIO_NUMBER, to=number)
+	__client.messages.create(body=text,from_=TWILIO_NUMBER, to=number)
 
 def format_assignments(assignments, dates):
 	"""
@@ -67,9 +71,6 @@ def get_html():
 	Returns the html from selenium for beautiful soup to parse
 	:return: HTML source from selenium
 	"""
-	USERNAME = '' # Fill in
-	PASSWORD = '' # Fill in
-
 	URL = 'https://moodle.sonoma.edu/C/calendar/view.php'
 
 	browser = webdriver.Chrome(r'driver\chromedriver.exe')
