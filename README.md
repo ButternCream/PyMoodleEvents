@@ -11,14 +11,16 @@ easy_install BeautifulSoup selenium twilio
 
 ## Fill In Information
 ```
+import TwilInfo # Remove
+
 ''' Twilio Information '''
-ACCOUNT_SID     = '' 	# Fill in
-AUTH_TOKEN      = '' 	# Fill in
-TWILIO_NUMBER   = '' 	# Fill in
-CELL_NUMBER     = '' 	# Fill in
+ACCOUNT_SID 	= TwilInfo.ACCOUNT_SID 		# Change
+AUTH_TOKEN 		= TwilInfo.AUTH_TOKEN 		# Change
+TWILIO_NUMBER 	= TwilInfo.TWILIO_NUMBER 	# Change
+CELL_NUMBER 	= TwilInfo.CELL_NUMBER 		# Change
 ''' Login Info '''
-USERNAME        = '' 		# Fill in
-PASSWORD        = '' 		# Fill in
+USERNAME 		= TwilInfo.USERNAME 		# Change
+PASSWORD 		= TwilInfo.PASSWORD 		# Change
 ```
 
 *Note: Built using SSU's moodle*
