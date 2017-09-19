@@ -27,7 +27,7 @@ PASSWORD 		= TwilInfo.PASSWORD 		# Change
 
 Change thr URL's in get_html() to adjust to your moodle domain
 
-After entering all your information you can simply
+After entering all your information you can simply do
 ```
 python app.py
 ```
