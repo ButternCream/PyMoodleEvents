@@ -127,8 +127,7 @@ def init():
 	:return:
 	"""
 	threading.Timer(60, init).start()
-	print('\nChecking message history for videos about every minute. Currently:',
-		  time.strftime("%c"))
+	print('\nChecking message history. Currently:', time.strftime("%c"))
 	check()
 
 if __name__ == "__main__":
