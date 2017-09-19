@@ -3,15 +3,17 @@ import time
 from bs4 import BeautifulSoup
 from twilio.rest import Client
 import threading
+import TwilInfo # Remove
 
 ''' Twilio Information '''
-ACCOUNT_SID = '' 	# Fill in
-AUTH_TOKEN = '' 	# Fill in
-TWILIO_NUMBER = '' 	# Fill in
-CELL_NUMBER = '' 	# Fill in
+ACCOUNT_SID 	= TwilInfo.ACCOUNT_SID 		# Change
+AUTH_TOKEN 		= TwilInfo.AUTH_TOKEN 		# Change
+TWILIO_NUMBER 	= TwilInfo.TWILIO_NUMBER 	# Change
+CELL_NUMBER 	= TwilInfo.CELL_NUMBER 		# Change
 ''' Login Info '''
-USERNAME = '' 		# Fill in
-PASSWORD = '' 		# Fill in
+USERNAME 		= TwilInfo.USERNAME 		# Change
+PASSWORD 		= TwilInfo.PASSWORD 		# Change
+
 
 __client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
@@ -73,7 +75,11 @@ def get_html():
 	"""
 	URL = 'https://moodle.sonoma.edu/C/calendar/view.php'
 
-	browser = webdriver.Chrome(r'driver\chromedriver.exe')
+	# Prevent chrome window from popping up
+	option = webdriver.ChromeOptions()
+	option.add_argument("--headless")
+	browser = webdriver.Chrome(r'driver\chromedriver.exe', chrome_options=option)
+
 	browser.get('http://login.sonoma.edu')
 	username = browser.find_element_by_id('username')
 	password = browser.find_element_by_id('password')
