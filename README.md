@@ -26,3 +26,9 @@ PASSWORD 		= TwilInfo.PASSWORD 		# Change
 *Note: Built using SSU's moodle*
 
 Change thr URL's in get_html() to adjust to your moodle domain
+
+After entering all your information you can simply
+```
+python app.py
+```
+
